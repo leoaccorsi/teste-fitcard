@@ -155,6 +155,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -196,6 +197,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Categoria\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -208,6 +210,10 @@
     <ProjectReference Include="..\TestePraticoModel\TestePraticoModel.csproj">
       <Project>{5d07244c-0f77-4209-b4e3-62be5b404e3e}</Project>
       <Name>TestePraticoModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestePraticoRepository\TestePraticoRepository.csproj">
+      <Project>{003712BF-98B6-4BBA-A6E6-FDE7CD4B8A0C}</Project>
+      <Name>TestePraticoRepository</Name>
     </ProjectReference>
     <ProjectReference Include="..\TestePraticoServices\TestePraticoService.csproj">
       <Project>{047917c7-4beb-4f27-931a-e80ae466b0d8}</Project>

@@ -40,9 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CategoriaService.cs" />
-    <Compile Include="EstabelecimentoService.cs" />
+    <Compile Include="Interface\ICategoriaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\CategoriaService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TestePraticoModel\TestePraticoModel.csproj">

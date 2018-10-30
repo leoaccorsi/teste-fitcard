@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using TestePraticoModel.Model;
+using TestePraticoServices.Interface;
+
+namespace TestePratico.Controllers
+{
+    public class CategoriaController : Controller
+    {
+        private ICategoriaService _categoriaService;
+
+        public CategoriaController(ICategoriaService categoriaService)
+        {
+            _categoriaService = categoriaService;
+        }
+
+        public ActionResult Index()
+        {
+            var categorias = _categoriaService.GetAll();
+            return View("Index", categorias);
+        }
+
+        public ActionResult Create(CategoriaModel categoria)
+        {
+            _categoriaService.Create(categoria);
+            return RedirectToAction("Index");
+        }
+    }
+}
