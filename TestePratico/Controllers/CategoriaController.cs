@@ -5,12 +5,17 @@ using System.Web;
 using System.Web.Mvc;
 using TestePraticoModel.Model;
 using TestePraticoServices.Interface;
+using TestePraticoServices.Service;
 
 namespace TestePratico.Controllers
 {
     public class CategoriaController : Controller
     {
         private ICategoriaService _categoriaService;
+
+        public CategoriaController() : this(new CategoriaService())
+        {
+        }
 
         public CategoriaController(ICategoriaService categoriaService)
         {
