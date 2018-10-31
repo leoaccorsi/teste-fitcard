@@ -10,6 +10,8 @@ namespace TestePraticoRepository.Interface
     public interface ICategoriaRepository
     {
         List<CategoriaModel> GetAll();
+        CategoriaModel GetSingle(long id);
+        CategoriaModel FindByName(string nome);
         bool Create(CategoriaModel categoria);
     }
 }

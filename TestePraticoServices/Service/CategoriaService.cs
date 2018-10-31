@@ -25,7 +25,13 @@ namespace TestePraticoServices.Service
 
         public bool Create(CategoriaModel categoria)
         {
-            return _categoriaRepository.Create(categoria);
+            if(_categoriaRepository.FindByName(categoria.nome) != null)
+            {
+                return false;
+            }
+
+            _categoriaRepository.Create(categoria);
+            return true;
         }
     }
 }

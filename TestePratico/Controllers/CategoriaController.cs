@@ -23,10 +23,28 @@ namespace TestePratico.Controllers
             return View("Index", categorias);
         }
 
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View(new CategoriaModel());
+        }
+
+        [HttpPost]
         public ActionResult Create(CategoriaModel categoria)
         {
-            _categoriaService.Create(categoria);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                var cadastrou = _categoriaService.Create(categoria);
+
+                if (!cadastrou)
+                {
+                    return View("Create", categoria);
+                }
+
+                return RedirectToAction("Index");
+            }
+
+            return View("Create", categoria);
         }
     }
 }
