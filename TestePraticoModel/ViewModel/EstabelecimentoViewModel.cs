@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestePraticoModel.Model;
 
-namespace TestePraticoModel.Model
+namespace TestePraticoModel.ViewModel
 {
-    public class EstabelecimentoModel
+    public class EstabelecimentoViewModel
     {
         public long id { get; set; }
+        [Required]
         public string razao_social { get; set; }
         public string nome_fantasia { get; set; }
+        [Required]
         public string cnpj { get; set; }
         public string email { get; set; }
         public string endereco { get; set; }
