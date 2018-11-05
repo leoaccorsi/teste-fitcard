@@ -38,5 +38,10 @@ namespace TestePraticoServices.Service
             _categoriaRepository.Create(categoria);
             return true;
         }
+
+        public CategoriaModel GetSingle(long id)
+        {
+            return _categoriaRepository.GetSingle(id);
+        }
     }
 }

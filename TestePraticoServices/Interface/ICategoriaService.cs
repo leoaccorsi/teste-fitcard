@@ -11,5 +11,6 @@ namespace TestePraticoServices.Interface
     {
         List<CategoriaModel> GetAll();
         bool Create(CategoriaModel categoria);
+        CategoriaModel GetSingle(long id);
     }
 }

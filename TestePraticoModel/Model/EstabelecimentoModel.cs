@@ -16,6 +16,7 @@ namespace TestePraticoModel.Model
         public string endereco { get; set; }
         public string cidade { get; set; }
         public string estado { get; set; }
+        public string telefone { get; set; }
         public DateTime data_cadastro { get; set; }
         public long? cod_categoria { get; set; }
         public Int16? status { get; set; }
