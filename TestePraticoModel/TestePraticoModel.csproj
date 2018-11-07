@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enum\ERetornoEstabelecimento.cs" />
     <Compile Include="Model\CategoriaModel.cs" />
     <Compile Include="Model\EstabelecimentoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

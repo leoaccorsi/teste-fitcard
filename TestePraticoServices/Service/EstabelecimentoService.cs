@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestePraticoModel.Enum;
 using TestePraticoModel.Model;
 using TestePraticoRepository.Interface;
 using TestePraticoRepository.Repository;
@@ -31,43 +32,44 @@ namespace TestePraticoServices.Service
             return _estabelecimentoRepository.GetAll();
         }
 
-        public bool Create(EstabelecimentoModel estabelecimento)
+        public ERetornoEstabelecimento Create(EstabelecimentoModel estabelecimento)
         {
             if (_estabelecimentoRepository.FindByCnpj(estabelecimento.cnpj) != null)
-                return false;
+                return ERetornoEstabelecimento.CnpjJaUtilizado;
 
             if (!Helper.CnpjValido(estabelecimento.cnpj))
-                return false;
+                return ERetornoEstabelecimento.CnpjInvalido;
 
             if (!Helper.ContaValida(estabelecimento.conta))
-                return false;
+                return ERetornoEstabelecimento.ContaInvalida;
 
             if (!Helper.AgenciaValida(estabelecimento.agencia))
-                return false;
+                return ERetornoEstabelecimento.AgenciaInvalida;
 
             if (!Helper.EmailValido(estabelecimento.email))
-                return false;
+                return ERetornoEstabelecimento.EmailInvalido;
 
-            if (!this.ValidarCategoria(estabelecimento))
-                return false;
+            var validaCategoria = this.ValidarCategoria(estabelecimento);
+            if (validaCategoria != ERetornoEstabelecimento.Ok)
+                return validaCategoria;
 
             _estabelecimentoRepository.Create(estabelecimento);
-            return true;
+            return ERetornoEstabelecimento.Cadastrado;
         }
 
-        private bool ValidarCategoria(EstabelecimentoModel estabelecimento)
+        private ERetornoEstabelecimento ValidarCategoria(EstabelecimentoModel estabelecimento)
         {
             if (estabelecimento.cod_categoria == null)
-                return true;
+                return ERetornoEstabelecimento.Ok;
 
             var categoria = _categoriaService.GetSingle((long)estabelecimento.cod_categoria);
 
             switch (categoria.nome.ToUpper())
             {
                 case "SUPERMERCADO":
-                    return !String.IsNullOrEmpty(estabelecimento.telefone);
+                    return ((String.IsNullOrEmpty(estabelecimento.telefone)) ? ERetornoEstabelecimento.TelefoneObrigatorio : ERetornoEstabelecimento.Ok);
                 default:
-                    return true;
+                    return ERetornoEstabelecimento.Ok;
             }
         }
     }

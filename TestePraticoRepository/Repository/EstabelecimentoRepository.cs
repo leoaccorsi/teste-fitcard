@@ -35,8 +35,8 @@ namespace TestePraticoRepository.Repository
 
         public bool Create(EstabelecimentoModel estabelecimento)
         {
-            var query = @"INSERT INTO Estabelecimento(razao_social, nome_fantasia, cnpj, email, endereco, cidade, estado, data_cadastro, cod_categoria, status, agencia, conta) 
-                                VALUES(@razao_social, @nome_fantasia, @cnpj, @email, @endereco, @cidade, @estado, GETDATE(), @cod_categoria, @status, @agencia, @conta)";
+            var query = @"INSERT INTO Estabelecimento(razao_social, nome_fantasia, cnpj, email, endereco, cidade, estado, telefone, data_cadastro, cod_categoria, status, agencia, conta) 
+                                VALUES(@razao_social, @nome_fantasia, @cnpj, @email, @endereco, @cidade, @estado, @telefone, GETDATE(), @cod_categoria, 1, @agencia, @conta)";
             return _conn.Execute(query, estabelecimento) > 0;
         }
     }
