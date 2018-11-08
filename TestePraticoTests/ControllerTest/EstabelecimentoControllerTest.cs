@@ -40,6 +40,15 @@ namespace TestePraticoTests.ControllerTest
             repositoryMockCategoria = new Mock<ICategoriaRepository>();
             serviceCategoria = new CategoriaService(repositoryMockCategoria.Object);
 
+            var categorias = new List<CategoriaModel>();
+            categorias.Add(new CategoriaModel() { nome = "Supermercado" });
+            categorias.Add(new CategoriaModel() { nome = "Restaurante" });
+            categorias.Add(new CategoriaModel() { nome = "Borracharia" });
+            categorias.Add(new CategoriaModel() { nome = "Posto" });
+            categorias.Add(new CategoriaModel() { nome = "Oficina" });
+
+            repositoryMockCategoria.Setup(x => x.GetAll()).Returns(categorias);
+
             //Setando estabelecimento
             repositoryMock = new Mock<IEstabelecimentoRepository>();
             service = new EstabelecimentoService(repositoryMock.Object, serviceCategoria);

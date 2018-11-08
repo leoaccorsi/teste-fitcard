@@ -120,7 +120,7 @@ namespace TestePratico.Controllers
 
         private void LoadModel(EstabelecimentoViewModel model)
         {
-            model.Categorias = new SelectList(_categoriaService.GetAll(), "id", "nome"); ;
+            model.Categorias = new SelectList(_categoriaService.GetAll(), "id", "nome");
         }
     }
 }
