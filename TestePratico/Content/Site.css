@@ -1,1 +1,4 @@
-﻿
+﻿.badge {
+    padding: 0.40em .7em;
+    border-radius: 0.30rem;
+}

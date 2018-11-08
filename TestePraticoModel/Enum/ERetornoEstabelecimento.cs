@@ -12,6 +12,8 @@ namespace TestePraticoModel.Enum
         SucessoCadastro,
         SucessoEdicao,
         SucessoDelete,
+        DesativadoSucesso,
+        AtivadoSucesso,
         CnpjJaUtilizado,
         CnpjInvalido,
         ContaInvalida,

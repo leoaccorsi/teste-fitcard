@@ -9,7 +9,7 @@
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
+    <div class="form-horizontal py-3">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <h4>Dados Gerais</h4>
         <hr />
@@ -109,10 +109,10 @@
         </div>
 
         <hr class="mt-5" />
-        @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-defaul float-left" })
+        @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-defaul float-left btn-sm" })
 
         <div class="float-right">
-            <input type="submit" value="Salvar" class="btn btn-success" />
+            <input type="submit" value="Salvar" class="btn btn-success btn-sm" />
         </div>
     </div>
 }

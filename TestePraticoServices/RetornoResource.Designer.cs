@@ -70,6 +70,15 @@ namespace TestePraticoServices {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ativado com sucesso.
+        /// </summary>
+        internal static string AtivadoSucesso {
+            get {
+                return ResourceManager.GetString("AtivadoSucesso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Categoria já cadastrada.
         /// </summary>
         internal static string CategoriaRepetida {
@@ -102,6 +111,15 @@ namespace TestePraticoServices {
         internal static string ContaInvalida {
             get {
                 return ResourceManager.GetString("ContaInvalida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Desativado com sucesso.
+        /// </summary>
+        internal static string DesativadoSucesso {
+            get {
+                return ResourceManager.GetString("DesativadoSucesso", resourceCulture);
             }
         }
         

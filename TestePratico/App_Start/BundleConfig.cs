@@ -12,7 +12,8 @@ namespace TestePratico
                         "~/Scripts/jquery-3.3.1.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jsgeral").Include(
-                        "~/Scripts/js-geral.js"));
+                        "~/Scripts/js-geral.js",
+                        "~/Scripts/popper.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));

@@ -102,5 +102,15 @@ namespace TestePraticoServices.Service
         {
             return _estabelecimentoRepository.Delete(id) ? ERetornoEstabelecimento.SucessoDelete : ERetornoEstabelecimento.ErroDesconhecido;
         }
+
+        public ERetornoEstabelecimento Desativar(long id)
+        {
+            return _estabelecimentoRepository.EditStatus(id, EStatus.Inativo) ? ERetornoEstabelecimento.DesativadoSucesso : ERetornoEstabelecimento.ErroDesconhecido;
+        }
+
+        public ERetornoEstabelecimento Ativar(long id)
+        {
+            return _estabelecimentoRepository.EditStatus(id, EStatus.Ativo) ? ERetornoEstabelecimento.AtivadoSucesso : ERetornoEstabelecimento.ErroDesconhecido;
+        }
     }
 }

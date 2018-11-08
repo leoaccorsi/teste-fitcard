@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestePraticoModel.Enum;
 using TestePraticoModel.Model;
 using TestePraticoModel.ViewModel;
 using TestePraticoRepository.Interface;
@@ -50,6 +51,13 @@ namespace TestePraticoRepository.Repository
                                                      telefone = @telefone, cod_categoria = @cod_categoria, agencia = @agencia, conta = @conta
                           WHERE ID = @ID";
             return _conn.Execute(query, estabelecimento) > 0;
+        }
+
+        public bool EditStatus(long id, EStatus status)
+        {
+            var query = @"UPDATE Estabelecimento SET status = @status
+                          WHERE ID = @ID";
+            return _conn.Execute(query, new { status, id }) > 0;
         }
 
         public bool Delete(long id)

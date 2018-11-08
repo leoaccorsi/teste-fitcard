@@ -16,5 +16,7 @@ namespace TestePraticoServices.Interface
         ERetornoEstabelecimento Create(EstabelecimentoModel estabelecimento);
         ERetornoEstabelecimento Edit(EstabelecimentoModel estabelecimento);
         ERetornoEstabelecimento Delete(long id);
+        ERetornoEstabelecimento Desativar(long id);
+        ERetornoEstabelecimento Ativar(long id);
     }
 }

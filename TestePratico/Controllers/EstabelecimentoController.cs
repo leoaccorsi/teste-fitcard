@@ -118,6 +118,26 @@ namespace TestePratico.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public ActionResult Desativar(long id)
+        {
+            var retorno = _estabelecimentoService.Desativar(id);
+
+            Alert(RetornoHelper.RetornoEstabelecimento(retorno), NotificationType.success);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Ativar(long id)
+        {
+            var retorno = _estabelecimentoService.Ativar(id);
+
+            Alert(RetornoHelper.RetornoEstabelecimento(retorno), NotificationType.success);
+
+            return RedirectToAction("Index");
+        }
+
         private void LoadModel(EstabelecimentoViewModel model)
         {
             model.Categorias = new SelectList(_categoriaService.GetAll(), "id", "nome");

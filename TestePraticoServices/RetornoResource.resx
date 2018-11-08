@@ -120,6 +120,9 @@
   <data name="AgenciaInvalida" xml:space="preserve">
     <value>Agência inválida</value>
   </data>
+  <data name="AtivadoSucesso" xml:space="preserve">
+    <value>Ativado com sucesso</value>
+  </data>
   <data name="CategoriaRepetida" xml:space="preserve">
     <value>Categoria já cadastrada</value>
   </data>
@@ -131,6 +134,9 @@
   </data>
   <data name="ContaInvalida" xml:space="preserve">
     <value>Conta inválida</value>
+  </data>
+  <data name="DesativadoSucesso" xml:space="preserve">
+    <value>Desativado com sucesso</value>
   </data>
   <data name="EmailInvalido" xml:space="preserve">
     <value>E-mail inválido</value>
