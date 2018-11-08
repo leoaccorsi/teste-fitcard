@@ -40,11 +40,10 @@ namespace TestePraticoTests.ControllerTest
             repositoryMockCategoria = new Mock<ICategoriaRepository>();
             serviceCategoria = new CategoriaService(repositoryMockCategoria.Object);
 
-
             //Setando estabelecimento
             repositoryMock = new Mock<IEstabelecimentoRepository>();
             service = new EstabelecimentoService(repositoryMock.Object, serviceCategoria);
-            controller = new EstabelecimentoController(service, serviceCategoria);
+            controller = new EstabelecimentoController(service, serviceCategoria);            
         }
 
         [TestMethod]
@@ -62,7 +61,7 @@ namespace TestePraticoTests.ControllerTest
             var result = controller.Index() as ViewResult;
 
             // assert
-            var model = result.ViewData.Model as List<EstabelecimentoModel>;
+            var model = result.ViewData.Model as List<EstabGridViewModel>;
             Assert.AreEqual(3, model.Count);
 
             Assert.AreEqual("Index", result.ViewName);
