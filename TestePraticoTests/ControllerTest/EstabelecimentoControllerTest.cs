@@ -44,17 +44,17 @@ namespace TestePraticoTests.ControllerTest
             //Setando estabelecimento
             repositoryMock = new Mock<IEstabelecimentoRepository>();
             service = new EstabelecimentoService(repositoryMock.Object, serviceCategoria);
-            controller = new EstabelecimentoController(service);
+            controller = new EstabelecimentoController(service, serviceCategoria);
         }
 
         [TestMethod]
         public void Testar_Listagem_Estabelecimentos_E_Retornar_Tela_Index()
         {
             // arrange
-            var estabelecimentos = new List<EstabelecimentoModel>();
-            estabelecimentos.Add(new EstabelecimentoModel() { razao_social = "Estabelecimento 1", cnpj = "11.111.111/1111-11" });
-            estabelecimentos.Add(new EstabelecimentoModel() { razao_social = "Estabelecimento 2", cnpj = "22.222.222/2222-22" });
-            estabelecimentos.Add(new EstabelecimentoModel() { razao_social = "Estabelecimento 3", cnpj = "33.333.333/3333-33" });
+            var estabelecimentos = new List<EstabGridViewModel>();
+            estabelecimentos.Add(new EstabGridViewModel() { razao_social = "Estabelecimento 1", cnpj = "11.111.111/1111-11" });
+            estabelecimentos.Add(new EstabGridViewModel() { razao_social = "Estabelecimento 2", cnpj = "22.222.222/2222-22" });
+            estabelecimentos.Add(new EstabGridViewModel() { razao_social = "Estabelecimento 3", cnpj = "33.333.333/3333-33" });
 
             repositoryMock.Setup(x => x.GetAll()).Returns(estabelecimentos);
 

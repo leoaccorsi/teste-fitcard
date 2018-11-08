@@ -1,0 +1,122 @@
+﻿@model TestePraticoModel.ViewModel.EstabelecimentoViewModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <h4>Dados Gerais</h4>
+        <hr />
+        <div class="row">
+            <div class="col">
+                @Html.LabelFor(model => model.razao_social)
+                <div>
+                    @Html.EditorFor(model => model.razao_social, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.razao_social, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col">
+                @Html.LabelFor(model => model.nome_fantasia)
+                <div>
+                    @Html.EditorFor(model => model.nome_fantasia, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.nome_fantasia, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                @Html.LabelFor(model => model.cnpj)
+                <div>
+                    @Html.HiddenFor(model => model.cnpj)
+                    @Html.EditorFor(model => model.cnpj, new { htmlAttributes = new { @class = "form-control cnpj-mask", disabled = "disabled" } })
+                    @Html.ValidationMessageFor(model => model.cnpj, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col">
+                @Html.LabelFor(model => model.email)
+                <div>
+                    @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                @Html.LabelFor(model => model.endereco)
+                <div>
+                    @Html.EditorFor(model => model.endereco, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.endereco, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col">
+                @Html.LabelFor(model => model.cidade)
+                <div>
+                    @Html.EditorFor(model => model.cidade, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.cidade, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                @Html.LabelFor(model => model.estado)
+                <div>
+                    @Html.EditorFor(model => model.estado, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.estado, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col">
+                @Html.LabelFor(model => model.telefone)
+                <div>
+                    @Html.EditorFor(model => model.telefone, new { htmlAttributes = new { @class = "form-control celphone-mask" } })
+                    @Html.ValidationMessageFor(model => model.telefone, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                @Html.LabelFor(model => model.cod_categoria)
+                <div>
+                    @Html.DropDownListFor(m => m.cod_categoria, Model.Categorias, "Selecione", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.cod_categoria, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+
+        <h4 class="mt-4">Dados Bancários</h4>
+        <hr />
+        <div class="row">
+            <div class="col">
+                @Html.LabelFor(model => model.agencia)
+                <div>
+                    @Html.EditorFor(model => model.agencia, new { htmlAttributes = new { @class = "form-control agencia-mask" } })
+                    @Html.ValidationMessageFor(model => model.agencia, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col">
+                @Html.LabelFor(model => model.conta)
+                <div>
+                    @Html.EditorFor(model => model.conta, new { htmlAttributes = new { @class = "form-control conta-mask" } })
+                    @Html.ValidationMessageFor(model => model.conta, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <hr class="mt-5" />
+        @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-defaul float-left" })
+
+        <div class="float-right">
+            <input type="submit" value="Salvar" class="btn btn-success" />
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

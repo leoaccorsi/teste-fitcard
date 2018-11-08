@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TestePraticoModel.Enum;
 using TestePraticoModel.Model;
+using TestePraticoModel.ViewModel;
 using TestePraticoRepository.Interface;
 using TestePraticoRepository.Repository;
 using TestePraticoServices.Helpers;
@@ -27,7 +28,7 @@ namespace TestePraticoServices.Service
             _categoriaService = categoriaService;
         }
 
-        public List<EstabelecimentoModel> GetAll()
+        public List<EstabGridViewModel> GetAll()
         {
             return _estabelecimentoRepository.GetAll();
         }
@@ -54,7 +55,26 @@ namespace TestePraticoServices.Service
                 return validaCategoria;
 
             _estabelecimentoRepository.Create(estabelecimento);
-            return ERetornoEstabelecimento.Cadastrado;
+            return ERetornoEstabelecimento.SucessoCadastro;
+        }
+
+        public ERetornoEstabelecimento Edit(EstabelecimentoModel estabelecimento)
+        {
+            if (!Helper.ContaValida(estabelecimento.conta))
+                return ERetornoEstabelecimento.ContaInvalida;
+
+            if (!Helper.AgenciaValida(estabelecimento.agencia))
+                return ERetornoEstabelecimento.AgenciaInvalida;
+
+            if (!Helper.EmailValido(estabelecimento.email))
+                return ERetornoEstabelecimento.EmailInvalido;
+
+            var validaCategoria = this.ValidarCategoria(estabelecimento);
+            if (validaCategoria != ERetornoEstabelecimento.Ok)
+                return validaCategoria;
+
+            _estabelecimentoRepository.Edit(estabelecimento);
+            return ERetornoEstabelecimento.SucessoEdicao;
         }
 
         private ERetornoEstabelecimento ValidarCategoria(EstabelecimentoModel estabelecimento)
@@ -71,6 +91,16 @@ namespace TestePraticoServices.Service
                 default:
                     return ERetornoEstabelecimento.Ok;
             }
+        }
+
+        public EstabelecimentoModel GetSingle(long id)
+        {
+            return _estabelecimentoRepository.GetSingle(id);
+        }
+
+        public ERetornoEstabelecimento Delete(long id)
+        {
+            return _estabelecimentoRepository.Delete(id) ? ERetornoEstabelecimento.SucessoDelete : ERetornoEstabelecimento.ErroDesconhecido;
         }
     }
 }

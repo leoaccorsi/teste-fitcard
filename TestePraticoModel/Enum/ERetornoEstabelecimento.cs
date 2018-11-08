@@ -9,12 +9,15 @@ namespace TestePraticoModel.Enum
     public enum ERetornoEstabelecimento
     {
         Ok,
-        Cadastrado,
+        SucessoCadastro,
+        SucessoEdicao,
+        SucessoDelete,
         CnpjJaUtilizado,
         CnpjInvalido,
         ContaInvalida,
         AgenciaInvalida,
         EmailInvalido,
-        TelefoneObrigatorio
+        TelefoneObrigatorio,
+        ErroDesconhecido,
     }
 }

@@ -5,12 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using TestePraticoModel.Enum;
 using TestePraticoModel.Model;
+using TestePraticoModel.ViewModel;
 
 namespace TestePraticoServices.Interface
 {
     public interface IEstabelecimentoService
     {
-        List<EstabelecimentoModel> GetAll();
+        EstabelecimentoModel GetSingle(long id);
+        List<EstabGridViewModel> GetAll();
         ERetornoEstabelecimento Create(EstabelecimentoModel estabelecimento);
+        ERetornoEstabelecimento Edit(EstabelecimentoModel estabelecimento);
+        ERetornoEstabelecimento Delete(long id);
     }
 }

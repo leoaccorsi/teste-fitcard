@@ -106,6 +106,42 @@ namespace TestePraticoServices {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Erro inesperado.
+        /// </summary>
+        internal static string ErroDesconhecido {
+            get {
+                return ResourceManager.GetString("ErroDesconhecido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cadastrado com sucesso.
+        /// </summary>
+        internal static string SucessoCadastro {
+            get {
+                return ResourceManager.GetString("SucessoCadastro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Excluído com sucesso.
+        /// </summary>
+        internal static string SucessoDelete {
+            get {
+                return ResourceManager.GetString("SucessoDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alterado com sucesso.
+        /// </summary>
+        internal static string SucessoEdicao {
+            get {
+                return ResourceManager.GetString("SucessoEdicao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Telefone é obrigatorio.
         /// </summary>
         internal static string TelefoneObrigatorio {

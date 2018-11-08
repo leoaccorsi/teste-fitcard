@@ -9,7 +9,7 @@ using TestePraticoServices.Service;
 
 namespace TestePratico.Controllers
 {
-    public class CategoriaController : Controller
+    public class CategoriaController : BaseController
     {
         private ICategoriaService _categoriaService;
 

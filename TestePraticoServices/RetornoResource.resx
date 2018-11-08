@@ -132,6 +132,18 @@
   <data name="EmailInvalido" xml:space="preserve">
     <value>E-mail inválido</value>
   </data>
+  <data name="ErroDesconhecido" xml:space="preserve">
+    <value>Erro inesperado</value>
+  </data>
+  <data name="SucessoCadastro" xml:space="preserve">
+    <value>Cadastrado com sucesso</value>
+  </data>
+  <data name="SucessoDelete" xml:space="preserve">
+    <value>Excluído com sucesso</value>
+  </data>
+  <data name="SucessoEdicao" xml:space="preserve">
+    <value>Alterado com sucesso</value>
+  </data>
   <data name="TelefoneObrigatorio" xml:space="preserve">
     <value>Telefone é obrigatorio</value>
   </data>

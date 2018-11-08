@@ -9,7 +9,7 @@ namespace TestePratico
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-3.3.1.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -20,12 +20,27 @@ namespace TestePratico
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/bootstrap.min.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/mask").Include(
+                      "~/Scripts/Plugins/InputMask/js/inputmask.js",
+                      "~/Scripts/Plugins/InputMask/js/jquery.inputmask.js",
+                      "~/Scripts/Plugins/InputMask/configuration-inputmask.js",
+                      "~/Scripts/Plugins/InputMask/js/inputmask.date.extensions.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap.min.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/sweetalert").Include(
+                      "~/Scripts/Plugins/SweetAlert/dist/sweetalert2.all.min.js"));
+
+            bundles.Add(new StyleBundle("~/Content/datatable").Include(
+                      "~/Scripts/Plugins/DataTable/jquery.dataTables.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/datatable").Include(
+                      "~/Scripts/Plugins/DataTable/jquery.dataTables.js"));
         }
     }
 }
