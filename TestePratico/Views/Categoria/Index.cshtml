@@ -5,30 +5,33 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<div class="row py-3">
+    <div class="col">
+        <h2>Categoria</h2>
+    </div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.nome)
-        </th>
-        <th></th>
-    </tr>
+    <div class="col">
+        @Html.ActionLink("Novo", "Create", null, new { @class = "btn btn-primary float-right" })
+    </div>
+</div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nome)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+        </tr>
+    </thead>
 
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nome)
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>

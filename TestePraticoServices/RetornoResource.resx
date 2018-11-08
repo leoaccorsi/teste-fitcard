@@ -120,6 +120,9 @@
   <data name="AgenciaInvalida" xml:space="preserve">
     <value>Agência inválida</value>
   </data>
+  <data name="CategoriaRepetida" xml:space="preserve">
+    <value>Categoria já cadastrada</value>
+  </data>
   <data name="CnpjInvalido" xml:space="preserve">
     <value>CNPJ inválido</value>
   </data>

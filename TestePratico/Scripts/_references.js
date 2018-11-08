@@ -3,6 +3,7 @@
 /// <reference path="jquery.validate.js" />
 /// <reference path="jquery.validate.unobtrusive.js" />
 /// <reference path="jquery-3.3.1.min.js" />
+/// <reference path="js-geral.js" />
 /// <reference path="plugins/datatable/jquery.datatables.js" />
 /// <reference path="plugins/inputmask/configuration-inputmask.js" />
 /// <reference path="plugins/inputmask/js/inputmask.date.extensions.js" />

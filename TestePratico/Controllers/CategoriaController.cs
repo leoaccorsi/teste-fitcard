@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TestePraticoModel.Enum;
 using TestePraticoModel.Model;
+using TestePraticoServices.Helpers;
 using TestePraticoServices.Interface;
 using TestePraticoServices.Service;
 
@@ -39,13 +41,16 @@ namespace TestePratico.Controllers
         {
             if (ModelState.IsValid)
             {
-                var cadastrou = _categoriaService.Create(categoria);
+                var retorno = _categoriaService.Create(categoria);
 
-                if (!cadastrou)
+                if (retorno != ERetornoEstabelecimento.SucessoCadastro)
                 {
+                    Alert(RetornoHelper.RetornoEstabelecimento(retorno), NotificationType.error);
+
                     return View("Create", categoria);
                 }
 
+                Alert(RetornoHelper.RetornoEstabelecimento(retorno), NotificationType.success);
                 return RedirectToAction("Index");
             }
 

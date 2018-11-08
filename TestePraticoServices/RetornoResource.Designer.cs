@@ -70,6 +70,15 @@ namespace TestePraticoServices {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Categoria já cadastrada.
+        /// </summary>
+        internal static string CategoriaRepetida {
+            get {
+                return ResourceManager.GetString("CategoriaRepetida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CNPJ inválido.
         /// </summary>
         internal static string CnpjInvalido {

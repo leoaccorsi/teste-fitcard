@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestePraticoModel.Enum;
 using TestePraticoModel.Model;
 using TestePraticoRepository.Interface;
 using TestePraticoRepository.Repository;
@@ -28,15 +29,15 @@ namespace TestePraticoServices.Service
             return _categoriaRepository.GetAll();
         }
 
-        public bool Create(CategoriaModel categoria)
+        public ERetornoEstabelecimento Create(CategoriaModel categoria)
         {
             if (_categoriaRepository.FindByName(categoria.nome) != null)
             {
-                return false;
+                return ERetornoEstabelecimento.CategoriaRepetida;
             }
 
             _categoriaRepository.Create(categoria);
-            return true;
+            return ERetornoEstabelecimento.SucessoCadastro;
         }
 
         public CategoriaModel GetSingle(long id)

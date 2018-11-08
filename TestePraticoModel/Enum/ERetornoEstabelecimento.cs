@@ -19,5 +19,6 @@ namespace TestePraticoModel.Enum
         EmailInvalido,
         TelefoneObrigatorio,
         ErroDesconhecido,
+        CategoriaRepetida
     }
 }
