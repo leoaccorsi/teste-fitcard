@@ -192,6 +192,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Plugins\DataTable\jquery.dataTables.js" />
     <Content Include="Scripts\Plugins\DataTable\jquery.dataTables.css" />
+    <Content Include="Scripts\Plugins\images\sort_asc.png" />
+    <Content Include="Scripts\Plugins\images\sort_both.png" />
+    <Content Include="Scripts\Plugins\images\sort_desc.png" />
     <Content Include="Scripts\Plugins\InputMask\configuration-inputmask.js" />
     <Content Include="Scripts\Plugins\InputMask\js\inputmask.date.extensions.js" />
     <Content Include="Scripts\Plugins\InputMask\js\inputmask.extensions.js" />
