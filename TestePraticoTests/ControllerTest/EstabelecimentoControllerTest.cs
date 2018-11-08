@@ -86,8 +86,6 @@ namespace TestePraticoTests.ControllerTest
                 cnpj = "94.335.598/0001-13"
             };
 
-            var estabelecimento = Mapper.Map<EstabelecimentoViewModel, EstabelecimentoModel>(estabelecimentoVM);
-
             // act
             var result = controller.Create(estabelecimentoVM) as RedirectToRouteResult;
 
@@ -303,6 +301,39 @@ namespace TestePraticoTests.ControllerTest
             Assert.AreEqual(estabelecimentoVM, model);
 
             Assert.AreEqual("Create", result.ViewName);
+        }
+
+        [TestMethod]
+        public void Testar_Editar_Estabelecimento()
+        {
+            // arrange
+            var estabelecimentoVM = new EstabelecimentoViewModel()
+            {
+                id = 1,
+                razao_social = "Estabelecimento 1",
+                cnpj = "94.335.598/0001-13"
+            };
+
+            // act
+            var result = controller.Edit(estabelecimentoVM) as RedirectToRouteResult;
+
+            // assert
+            repositoryMock.Verify(x => x.Edit(It.IsAny<EstabelecimentoModel>()), Times.Once());
+            Assert.AreEqual("Index", result.RouteValues["action"]);
+        }
+
+        [TestMethod]
+        public void Testar_Excluir_Estabelecimento()
+        {
+            // arrange
+            var idExcluir = 1;
+
+            // act
+            var result = controller.Delete(idExcluir) as RedirectToRouteResult;
+
+            // assert
+            repositoryMock.Verify(x => x.Delete(idExcluir), Times.Once());
+            Assert.AreEqual("Index", result.RouteValues["action"]);
         }
     }
 }
