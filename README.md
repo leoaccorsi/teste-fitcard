@@ -1,6 +1,4 @@
-# teste-fitcard
-
-Passo a passo:
+# Passo a passo:
 
 1 - Baixar o projeto na máquina
 
